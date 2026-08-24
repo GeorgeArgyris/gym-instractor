@@ -10,11 +10,10 @@ const DAYS = [
       {name:'Chest-Supported Row', muscle:'Upper Back · Rhomboids', sets:'3 × 10–12', rest:'1-2 min', video:{id:'jLvqKgW-_G8', start:533, end:350}},
       {name:'Inverted Row', muscle:'Upper back, shoulders, arms, and core', sets:'3 × 10–12', rest:'1-2 mins', video:{id:'jLvqKgW-_G8', start:413, end:425}},
       {name:'Push-Ups', muscle:'Chest', sets:'3 × 12–15', rest:'60–90 sec', video:{id:'fGm-ef-4PVk', start:352, end:370}},
-      {name:'Dumbbell Lateral Raise', muscle:'Side Delts', sets:'3 × 12–15', rest:'60–90 sec', video:{id:'Myim1WH6Qec'}},
-      {name:'Machine / DB Shoulder Press', muscle:'Front · Side Delts', sets:'3 × 8–12', rest:'2 min', search:'dumbbell shoulder press form'},
-      {name:'Incline Dumbbell Press', muscle:'Upper Chest · Front Delts', sets:'2–3 × 8–12', rest:'2 min', search:'incline dumbbell press form'},
-      {name:'Biceps Curl', muscle:'Biceps', sets:'2 × 10–12', rest:'60–90 sec', search:'dumbbell biceps curl form'},
-      {name:'Triceps Pushdown', muscle:'Triceps', sets:'2 × 10–12', rest:'60–90 sec', search:'cable triceps pushdown form'}
+      {name:'Incline Smith Machine Press', muscle:'Chest & Shoulders', sets:'3 × 12–15', rest:'1-2 mins', video:{id:'fGm-ef-4PVk', start:585, end:593}},
+      {name:'Face Away Bayesian Cable Curl', muscle:'Biceps', sets:'3 × 8–12', rest:'1-2 min', video:{id:'GNO4OtYoCYk', start:628, end:640}},
+      {name:'Triceps Pressdown (Bar)', muscle:'Triceps', sets:'3 × 8–12', rest:'1-2 min',  video:{id:'OpRMRhr0Ycc', start:129, end:141}},
+      {name:'Dumbbell Overhead Press', muscle:'Shoulders', sets:'3 × 10–12', rest:'60–90 sec', video:{id:'SgyUoY0IZ7A', start:325, end:344}}
     ]
   },
   {
