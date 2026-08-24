@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasiliki's Training Program</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#1a1815;
+    --surface:#221f1b;
+    --surface-2:#2a2621;
+    --border:rgba(242,237,228,.09);
+    --text:#f2ede4;
+    --muted:#96897a;
+    --rust:#c1663b;
+    --rust-dim:rgba(193,102,59,.16);
+    --sage:#7d9a76;
+    --sage-dim:rgba(125,154,118,.16);
+    --dust:#7f96b0;
+    --dust-dim:rgba(127,150,176,.16);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    width:min(760px, calc(100% - 32px));
+    margin:0 auto;
+    padding-bottom:70px;
+  }
+
+  /* ============ HERO ============ */
+
+  header.hero{
+    padding:44px 0 26px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .mark{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    color:var(--muted);
+    text-transform:uppercase;
+  }
+
+  h1{
+    font-family:'Bebas Neue',sans-serif;
+    font-weight:400;
+    letter-spacing:.01em;
+    font-size:clamp(32px,7vw,46px);
+    line-height:.95;
+    width:100%;
+  }
+
+  h1 em{
+    font-style:normal;
+    color:var(--rust);
+  }
+
+  .hero-meta{
+    color:var(--muted);
+    font-size:13px;
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:.02em;
+  }
+
+  /* ============ TABS ============ */
+
+  .tabs{
+    display:flex;
+    gap:2px;
+    margin:26px 0 22px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:4px;
+  }
+
+  .tab{
+    flex:1;
+    border:none;
+    background:transparent;
+    color:var(--muted);
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    padding:11px 6px;
+    border-radius:9px;
+    cursor:pointer;
+    transition:.18s ease;
+  }
+
+  .tab span{
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--muted);
+    letter-spacing:.08em;
+    margin-bottom:2px;
+  }
+
+  .tab.active{ color:#100f0d; }
+  .tab.active[data-accent="rust"]{ background:var(--rust); }
+  .tab.active[data-accent="sage"]{ background:var(--sage); }
+  .tab.active[data-accent="dust"]{ background:var(--dust); }
+  .tab.active span{ color:rgba(16,15,13,.65); }
+
+  /* ============ DAY HEADER ============ */
+
+  .day-title-row{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+    padding-left:11px;
+    border-left:3px solid var(--line-color,var(--rust));
+  }
+
+  .day-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:26px;
+    letter-spacing:.01em;
+  }
+
+  .day-subtitle{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:4px;
+  }
+
+  .day-tags{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+  }
+
+  .day-tags span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    letter-spacing:.06em;
+    padding:5px 8px;
+    border-radius:6px;
+    border:1px solid var(--border);
+    color:var(--muted);
+  }
+
+  /* ============ EXERCISE LIST ============ */
+
+  .exercise-list{ display:grid; gap:8px; }
+
+  .exercise{
+    display:grid;
+    grid-template-columns:40px 1fr auto;
+    align-items:center;
+    gap:14px;
+    padding:14px 14px 14px 16px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid transparent;
+    border-radius:10px;
+  }
+
+  .exercise[data-accent="rust"]{ border-left-color:var(--rust); }
+  .exercise[data-accent="sage"]{ border-left-color:var(--sage); }
+  .exercise[data-accent="dust"]{ border-left-color:var(--dust); }
+
+  .ex-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+  }
+
+  .ex-name{ font-weight:600; font-size:14.5px; }
+  .ex-muscle{ color:var(--muted); font-size:12px; margin-top:3px; }
+
+  .ex-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    justify-self:end;
+  }
+
+  .ex-sets{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:13px;
+    background:var(--surface-2);
+    padding:7px 9px;
+    border-radius:7px;
+    white-space:nowrap;
+  }
+
+  .ex-rest{
+    font-size:11px;
+    color:var(--muted);
+    white-space:nowrap;
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  .play-btn{
+    width:32px;
+    height:32px;
+    flex:none;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:var(--surface-2);
+    color:var(--text);
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+    font-size:12px;
+    transition:.15s ease;
+  }
+
+  .play-btn:hover{ background:var(--rust); border-color:var(--rust); color:#100f0d; }
+  .play-btn.ext{ font-size:11px; }
+
+  /* ============ NOTES ============ */
+
+  .notes{
+    margin-top:36px;
+    padding:18px 20px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:var(--surface);
+  }
+
+  .notes h3{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:10px;
+    font-weight:700;
+  }
+
+  .notes ul{
+    list-style:none;
+    display:grid;
+    gap:8px;
+  }
+
+  .notes li{
+    font-size:13px;
+    color:var(--text);
+    padding-left:14px;
+    position:relative;
+    line-height:1.55;
+  }
+
+  .notes li::before{
+    content:'—';
+    position:absolute;
+    left:0;
+    color:var(--muted);
+  }
+
+  /* ============ MODAL ============ */
+
+  .modal-backdrop{
+    position:fixed;
+    inset:0;
+    background:rgba(10,9,8,.82);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:50;
+    padding:20px;
+  }
+
+  .modal-backdrop.open{ display:flex; }
+
+  .modal{
+    width:min(560px,100%);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+
+  .modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 14px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .modal-head span{ font-size:13px; font-weight:600; }
+
+  .modal-close{
+    border:none;
+    background:none;
+    color:var(--muted);
+    font-size:20px;
+    cursor:pointer;
+    line-height:1;
+    padding:2px 6px;
+  }
+
+  .modal-body{ aspect-ratio:16/9; background:#000; }
+  .modal-body iframe{ width:100%; height:100%; border:0; display:block; }
+
+  .modal-foot{
+    padding:10px 14px;
+    font-size:11px;
+    color:var(--muted);
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  /* ============ RESPONSIVE ============ */
+
+  @media (max-width:520px){
+    header.hero{ padding-top:32px; }
+    .exercise{
+      grid-template-columns:1fr auto;
+      grid-template-areas:
+        "name right"
+        "meta right";
+      row-gap:6px;
+    }
+    .ex-num{ display:none; }
+    .ex-right{ flex-direction:column; align-items:flex-end; gap:6px; }
+    .day-title-row{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <div class="mark">Personal training log</div>
+      <h1>Vasiliki<em>'s</em> Training Program</h1>
+    </div>
+    <div class="hero-meta">3×/week &nbsp;·&nbsp; 8–15 reps &nbsp;·&nbsp; 1–3 RIR</div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <section id="day-content"></section>
+
+  <div class="notes">
+    <h3>Βασικοί κανόνες</h3>
+    <ul>
+      <li>Κράτα περίπου 1–3 RIR στα περισσότερα working sets.</li>
+      <li>Όταν φτάσεις το πάνω όριο επαναλήψεων με καλή τεχνική, αύξησε λίγο το βάρος.</li>
+      <li>2–3 λεπτά διάλειμμα στα βαριά compound exercises, 60–90 δευτ. στα isolation.</li>
+      <li>Η σωστή τεχνική έχει προτεραιότητα από το βάρος — πάτα ▶ δίπλα σε κάθε άσκηση για γρήγορο demo.</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <span id="modalTitle"></span>
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">Σύντομο απόσπασμα τεχνικής — YouTube</div>
+  </div>
+</div>
+
+
+<script src="program.js"></script>
+<script>
+
+
+const tabsEl = document.getElementById('tabs');
+const contentEl = document.getElementById('day-content');
+
+function renderTabs(activeId){
+  tabsEl.innerHTML = DAYS.map(d => `
+    <button class="tab ${d.id===activeId?'active':''}" data-accent="${d.accent}" data-day="${d.id}">
+      <span>${d.label}</span>${d.title.split(' — ')[0]}
+    </button>
+  `).join('');
+  tabsEl.querySelectorAll('.tab').forEach(btn=>{
+    btn.addEventListener('click', ()=> renderDay(parseInt(btn.dataset.day)));
+  });
+}
+
+function renderDay(dayId){
+  const day = DAYS.find(d=>d.id===dayId);
+  renderTabs(dayId);
+
+  contentEl.innerHTML = `
+    <div class="day-title-row" style="border-left-color:var(--${day.accent})">
+      <div>
+        <div class="day-title">${day.title}</div>
+        <div class="day-subtitle">${day.subtitle}</div>
+      </div>
+      <div class="day-tags">${day.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+    </div>
+    <div class="exercise-list">
+      ${day.exercises.map((ex,i)=>`
+        <div class="exercise" data-accent="${day.accent}">
+          <div class="ex-num">${String(i+1).padStart(2,'0')}</div>
+          <div>
+            <div class="ex-name">${ex.name}</div>
+            <div class="ex-muscle">${ex.muscle}</div>
+          </div>
+          <div class="ex-right">
+            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+              <span class="ex-sets">${ex.sets}</span>
+              <span class="ex-rest">${ex.rest}</span>
+            </div>
+            ${ex.video
+              ? `<button class="play-btn" title="Δες σύντομο demo" data-vid="${ex.video.id}" data-start="${ex.video.start||0}" data-end="${ex.video.end||''}" data-name="${ex.name}">▶</button>`
+              : `<button class="play-btn ext" title="Αναζήτηση στο YouTube" data-search="${ex.search}">↗</button>`
+            }
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  contentEl.querySelectorAll('[data-vid]').forEach(btn=>{
+    btn.addEventListener('click', ()=> openModal(btn.dataset.vid, btn.dataset.start, btn.dataset.end, btn.dataset.name));
+  });
+  contentEl.querySelectorAll('[data-search]').forEach(btn=>{
+    btn.addEventListener('click', ()=> window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(btn.dataset.search), '_blank', 'noopener'));
+  });
+}
+
+const backdrop = document.getElementById('modalBackdrop');
+const modalBody = document.getElementById('modalBody');
+const modalTitle = document.getElementById('modalTitle');
+
+function openModal(id, start, end, name){
+  let src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&start=${start||0}`;
+  if(end){ src += `&end=${end}`; }
+  modalBody.innerHTML = `<iframe src="${src}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  modalTitle.textContent = name;
+  backdrop.classList.add('open');
+}
+
+function closeModal(){
+  backdrop.classList.remove('open');
+  modalBody.innerHTML = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+backdrop.addEventListener('click', e=>{ if(e.target===backdrop) closeModal(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+renderDay(1);
+</script>
+
+</body>
+</html>
