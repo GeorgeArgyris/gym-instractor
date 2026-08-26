@@ -19,18 +19,18 @@ const DAYS = [
     {
         id: 2, accent: 'sage', label: 'Day 2',
         title: 'Lower — Glute Focus',
-        subtitle: 'Έμφαση στους γλουτούς και posterior chain',
+        subtitle: '9 Ασκήσεις',
         tags: ['GLUTES', 'LEGS', 'SHOULDERS'],
         exercises: [
-            { name: 'Hip Thrust', muscle: 'Glutes', sets: '4 × 8–12', rest: '2–3 min', video: { id: 'U5U6JNIiZ_Q', start: 30, end: 65 } },
-            { name: 'Romanian Deadlift', muscle: 'Glutes · Hamstrings', sets: '3 × 8–10', rest: '2–3 min', video: { id: '_oyxCn2iSjU', start: 30, end: 65 } },
-            { name: 'Bulgarian Split Squat', muscle: 'Glutes · Quads', sets: '3 × 8–12', rest: '2 min', video: { id: 'esY7T8MA4S4' } },
-            { name: 'Leg Press', muscle: 'Quads · Glutes', sets: '3 × 10–12', rest: '2 min', search: 'leg press form' },
-            { name: 'Leg Curl', muscle: 'Hamstrings', sets: '3 × 10–15', rest: '90 sec', search: 'seated leg curl form' },
-            { name: 'Cable / Machine Hip Abduction', muscle: 'Glute Medius', sets: '3 × 15–20', rest: '60–90 sec', search: 'cable hip abduction form' },
-            { name: 'Dumbbell Lateral Raise', muscle: 'Side Delts', sets: '3 × 12–15', rest: '60–90 sec', video: { id: 'Myim1WH6Qec' } },
-            { name: 'Reverse Pec Deck', muscle: 'Rear Delts', sets: '3 × 12–15', rest: '60–90 sec', search: 'reverse pec deck form' },
-            { name: 'Calf Raises', muscle: 'Calves', sets: '3 × 12–15', rest: '60–90 sec', search: 'standing calf raise form' }
+            { name: 'Sitted or Lying Leg Curl', muscle: 'Hamstrings', sets: '3 × 10–12', rest: '90 sec', video: { id: 'hRZ5MM6gmlE', start: 24, end: 40 } },
+            { name: 'Hip Thrust', muscle: 'Glutes', sets: '3 × 8–12', rest: '2–3 min', video: { id: '3ryh7PNhz3E', start: 127, end: 145 } },
+            { name: 'Smith Machine Squat', muscle: 'Glutes · Quads', sets: '3 × 8–10', rest: '2–3 min', video: { id: '3ryh7PNhz3E', start: 368, end: 375 } },
+            { name: 'Bulgarian Split Squat', muscle: 'Glutes · Quads', sets: '3 × 8–12', rest: '2 min', video: { id: '3ryh7PNhz3E', start: 376, end: 385 } },
+            { name: 'Machine Hip Abduction', muscle: 'Upper Glutes', sets: '3 × 8–12', rest: '2 min', video: { id: '3ryh7PNhz3E', start: 500, end: 515 } },
+            { name: 'Machine Leg Extension', muscle: 'Quads', sets: '3 × 10–12', rest: '2 min', video: { id: 'kIXcoivzGf8', start: 426, end: 440 } },
+            { name: 'Smith Calf Raises', muscle: 'Calves', sets: '3 × 12–15', rest: '60–90 sec', video: { id: '-qsRtp_PbVM', start: 174, end: 182} },
+            { name: 'Lean-away Dumbbell Lateral Raise', muscle: 'Side Delts', sets: '3 × 12–15', rest: '60–90 sec', video: { id: '3ryh7PNhz3E', start: 179, end: 190 } },
+            { name: '45-Degree Back Extension', muscle: 'Lower back · Glutes', sets: '3 × 12–15', rest: '60–90 sec', video: { id: '3ryh7PNhz3E', start: 729, end: 740 } },
         ]
     },
     {
@@ -73,17 +73,17 @@ const messages = [
     {
         "id": 2,
         "title": "Τα κατάφερες μωρό μου !!! 🔥",
-        "text": "-"
+        "text": "Ω ρε μια κώλαρα! Πιασμενη... 💪"
     },
     {
         "id": 2,
-        "title": "Leg day survivor 🦵",
-        "text": "-"
+        "title": "Leg day survivor 🔥",
+        "text": "Προσοχή στις σκάλες. Σιγά σιγα και πιάνουμε το χερούλι. 💪"
     },
     {
         "id": 2,
-        "title": "Δεν τα νιώθεις ε; 😂",
-        "text": "-"
+        "title": "Δεν τα νιώθεις ε; 🔥",
+        "text": "Στη καρεκλίτσα αύριο στο εργαστήριο. 💪"
     },
 
     {
