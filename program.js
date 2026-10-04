@@ -5,10 +5,10 @@ const DAYS = [
         subtitle: '9 Ασκήσεις',
         tags: ['BACK', 'SHOULDERS', 'UPPER'],
         exercises: [
-            { name: 'Wide Grip Lat Pulldown', muscle: 'Lats · Upper Back', sets: '2 × 8–12', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 220, end: 235 } },
+            { name: 'Pull Ups', muscle: 'Whole Back', sets: '3 × MAX', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 220, end: 235 } },
+            { name: 'Neutral Grid Pulldown', muscle: 'Lats · Lower Back', sets: '3 × 8–12', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 240, end: 250 } },
             { name: 'Cable Row', muscle: 'Mid Back & Lats', sets: '2 × 8–12', rest: '1–2 min', video: { id: 'jLvqKgW-_G8', start: 563, end: 576 } },
-            { name: 'Chest-Supported Row', muscle: 'Upper Back · Rhomboids', sets: '2 × 10–12', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 533, end: 350 } },
-            { name: 'Inverted Row', muscle: 'Upper back, shoulders, arms, and core', sets: '2 × 10–12', rest: '1-2 mins', video: { id: 'jLvqKgW-_G8', start: 413, end: 425 } },
+            { name: 'Row Face Pull Ups - Sitted', muscle: 'Upper Back · Rhomboids', sets: '2 × 10–12', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 590, end: 610 } },
             { name: 'Push-Ups', muscle: 'Chest', sets: '3 × 12–15', rest: '60–90 sec', video: { id: 'fGm-ef-4PVk', start: 352, end: 370 } },
             { name: 'Incline Smith Machine Press', muscle: 'Chest & Shoulders', sets: '3 × 12–15', rest: '1-2 mins', video: { id: 'fGm-ef-4PVk', start: 585, end: 593 } },
             { name: 'Face Away Bayesian Cable Curl', muscle: 'Biceps', sets: '3 × 8–12', rest: '1-2 min', video: { id: 'GNO4OtYoCYk', start: 628, end: 640 } },
