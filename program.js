@@ -9,10 +9,11 @@ const DAYS = [
             { name: 'Neutral Grid Pulldown', muscle: 'Lats · Lower Back', sets: '3 × 8–12', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 240, end: 250 } },
             { name: 'Cable Row', muscle: 'Mid Back & Lats', sets: '2 × 8–12', rest: '1–2 min', video: { id: 'jLvqKgW-_G8', start: 563, end: 576 } },
             { name: 'Row Face Pull Ups - Sitted', muscle: 'Upper Back · Rhomboids', sets: '2 × 10–12', rest: '1-2 min', video: { id: 'jLvqKgW-_G8', start: 590, end: 610 } },
-            { name: 'Push-Ups', muscle: 'Chest', sets: '3 × 12–15', rest: '60–90 sec', video: { id: 'fGm-ef-4PVk', start: 352, end: 370 } },
+            { name: 'Push-Ups', muscle: 'Chest', sets: '3 × MAX', rest: '60–90 sec', video: { id: 'fGm-ef-4PVk', start: 352, end: 370 } },
+            { name: 'Pec Deck', muscle: 'Chest', sets: '3 × 8-12', rest: '60–90 sec', video: { id: 'fGm-ef-4PVk', start: 668, end: 680 } },
             { name: 'Incline Smith Machine Press', muscle: 'Chest & Shoulders', sets: '3 × 12–15', rest: '1-2 mins', video: { id: 'fGm-ef-4PVk', start: 585, end: 593 } },
             { name: 'Face Away Bayesian Cable Curl', muscle: 'Biceps', sets: '3 × 8–12', rest: '1-2 min', video: { id: 'GNO4OtYoCYk', start: 628, end: 640 } },
-            { name: 'Triceps Pressdown (Bar)', muscle: 'Triceps', sets: '3 × 8–12', rest: '1-2 min', video: { id: 'OpRMRhr0Ycc', start: 129, end: 141 } },
+            { name: 'Overhead Triceps Extension', muscle: 'Triceps', sets: '3 × 8–12', rest: '1-2 min', video: { id: 'OpRMRhr0Ycc', start: 197, end: 210 } },
             { name: 'Dumbbell Overhead Press', muscle: 'Shoulders', sets: '3 × 10–12', rest: '60–90 sec', video: { id: 'SgyUoY0IZ7A', start: 325, end: 344 } }
         ]
     },
@@ -29,7 +30,7 @@ const DAYS = [
             { name: 'Machine Hip Abduction', muscle: 'Upper Glutes', sets: '3 × 8–12', rest: '2 min', video: { id: '3ryh7PNhz3E', start: 500, end: 515 } },
             { name: 'Machine Leg Extension', muscle: 'Quads', sets: '3 × 10–12', rest: '2 min', video: { id: 'kIXcoivzGf8', start: 426, end: 440 } },
             { name: 'Smith Calf Raises', muscle: 'Calves', sets: '3 × 12–15', rest: '60–90 sec', video: { id: '-qsRtp_PbVM', start: 174, end: 182} },
-            { name: 'Lean-away Dumbbell Lateral Raise', muscle: 'Side Delts', sets: '3 × 12–15', rest: '60–90 sec', video: { id: '3ryh7PNhz3E', start: 179, end: 190 } },
+            { name: 'Atlantis Standing Machine Lateral Raise', muscle: 'Side Delts', sets: '3 × 12–15', rest: '60–90 sec', video: { id: 'SgyUoY0IZ7A&t=179', start: 429, end: 440 } },
             { name: '45-Degree Back Extension', muscle: 'Lower back · Glutes', sets: '3 × 12–15', rest: '60–90 sec', video: { id: '3ryh7PNhz3E', start: 729, end: 740 } },
         ]
     },
